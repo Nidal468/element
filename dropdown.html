@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0 " >
+  <title>menu</title>
+  <link href="dropdown.css" rel="stylesheet" >
+</head>
+<body>
+	<div class="container">
+	   <div class="search-bar">
+	      <div id="select">
+	         <p id="selectText">
+	           All categories
+	         </p>
+	         <img src="arrow.png">
+					<ul id="list">
+					   <li class="options">All categories</li>
+						<li class="options">Option 1</li>
+						<li class="optiond">Option 2</li>
+						<li class="options">Option 3</li>
+						<li class="options">Option 4</li>
+			  	</ul>
+					
+	      </div>
+	      <input type="text" placeholder="Search In All Categories" id="inputfield"/>
+	      
+	   </div>
+	   
+	</div>
+	
+</body>
+<script>
+   let select = document.getElementById("select");
+	select.onclick = function(){
+		list.classList.toggle("open");
+	}
+	 
+	let list = document.getElementById("list");
+	
+  let selectText = document.getElementById("selectText"); 
+	let inputfield = document.getElementById("inputfield");
+  let options = document.getElementsByClassName("options");
+	
+for(option of options){
+	option.onclick = function(){
+		selectText.innerHTML = this.innerHTML;
+		inputfield.placeholder = "Search In " + selectText.innerHTML;
+	}
+}
+
+</script>
+
+
+
+
+
+
+
+
+	
+</html>
