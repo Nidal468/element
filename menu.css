@@ -20,21 +20,17 @@ body{
 	background: rgba(0,0,0,0.7);
 	text-align: center;
 	
+	
 }
-.menu-bar ul{
+.menu-bar ul:not(#list) {
 	display: inline-flex;
 	list-style: none;	
 	
 }
-.menu-bar ul li{
+.menu-bar ul li:not(.options) {
 	width: 20%;
 	margin: 10px;
-	padding: 15px;
-  
-
-	
-	
-	
+	padding: 15px;	
 }
 .menu-bar ul li a{
 	text-decoration: none;
@@ -44,48 +40,68 @@ body{
   
 
 }	
-.menu-bar ul li:hover{
+.menu-bar ul li:not(.options):hover{
 	background:  #171717;
 	border-radius: 4px;
 	
 }
-.sub-menu-1{
-	display: none;
-	
-}
-.menu-bar ul li:hover .sub-menu-1{
-	display: block;
-	position: absolute;
-	background: rgba(0,0,0,0.7);
-	margin-top: 25px;
-	margin-left: 30px;
-	border-left: 2px solid cyan;
-	
-	
-	
-	
-}
-.menu-bar ul li:hover .sub-menu-1 ul{
-	display: block;
-	margin: 10px;
-	
-}
-
-.menu-bar ul li:hover .sub-menu-1 ul li{
-	width: 80%;
-	padding: 10px;
+#select{
 	background: transparent;
-	border-radius: 0;
-	text-align: left;	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-width: 120px;
+	padding: 10px 10px;
+	cursor: pointer;
+	position: relative;
+	border-radius: 4px;
+	margin: 15px;
+	
+  	
+}
+#select:hover{
+	background: #171717;
 	
 }
-.menu-bar ul li:hover .sub-menu-1 ul li a:hover{
-	color: cyan;
+#selectText{
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	
 	
 }
+#select ul{
+	position: absolute;
+	list-style: none;
+	top: 120%;
+	left: 0;
+	background: #fff;
+	color: #555;
+	width: 100%;
+	border-radius: 4px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s;
+  min-width: 120px;
+  
 
-
-
+	
+}
+#select ul li{
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 600;
+}
+.options{
+	padding: 10px;
+	
+	
+}
+#select ul.open{
+	max-height: 800px;
+	
+}
 
 
 
